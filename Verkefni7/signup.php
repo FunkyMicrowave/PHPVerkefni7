@@ -46,7 +46,7 @@ $code = 626;
            <input type="text" name="lname" required><br>
           Password<br>
            <input type="password" name="password" required>
-           <input id="takki" type="submit">
+           <input value="Sign up" id="takki" type="submit">
     </form>
 </body>
 </html>
@@ -58,5 +58,5 @@ $code = 626;
           header("Refresh: 2; URL=../Verkefni7/");
       }
   }
-      
+    
 ?>

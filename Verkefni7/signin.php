@@ -13,7 +13,7 @@
 	// fetch() sækir eina röð í einu frá database.
 	while($row = $result -> fetch()){
 		  $id = $row['id'];
-          $name = $row['fnafn'] . " " . $row['lnafn'];
+          $fname = $row['fname'];
           $password = $row['pass'];
           $email = $row['email'];
 	}
@@ -23,7 +23,7 @@
               session_start();
           $_SESSION['logon'] = true;
           $_SESSION['id'] = $id;
-          $_SESSION['name'] = $name;
+          $_SESSION['name'] = $fname;
           $_SESSION['password'] = $password;
           $_SESSION['email'] = $email;
 
@@ -35,5 +35,9 @@
           header("Refresh: 2; URL=../Verkefni7/");
       }
   }
+else{
+          header('Location: ../Verkefni7/');
+
+}
       
 ?>

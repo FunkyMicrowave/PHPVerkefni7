@@ -6,28 +6,17 @@
       $pass = $_POST['password'];
       $email = $_POST['email'];
     try {
-        $sql = "
-        INSERT INTO users
-        (fname, lname, pass, email)
-        VALUES
-        (:fname,:lname,:pass,:email);
-        ";
-        $statement = $pdo->prepare($sql);
-        $statement->bindValue(':fname', $fname);
-        $statement->bindValue(':lname', $lname);
-        $statement->bindValue(':pass', $pass);
-        $statement->bindValue(':email', $email);
-        $inserted = $statement->execute();	
-        if($inserted){
-    echo 'Row inserted!<br>';
-}
+        $sql = "INSERT INTO users (fname, lname, pass, email) VALUES (:fname,:lname,:pass,:email);";
+        $query = $pdo->prepare($sql);
+        $query->execute( array( ':fname'=>$fname, ':lname'=>$lname, ':pass'=>$pass, ':email'=>$email ) );
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	} catch (Exception $e) {
 		echo "Ekki tókst að skrá gögnin". "<br>" . $e->getMessage();
 	}
-    header("Refresh: 2; URL=../Verkefni7/");
+    header("../Verkefni7/");
   }
 else{
-    header "../Verkefni7/";
+    header("../Verkefni7/");
 }
       
 ?>

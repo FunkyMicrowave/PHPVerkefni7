@@ -48,14 +48,14 @@
            <input type="email" name="email" required><br>
            Password<br>
            <input type="password" name="password" required>
-           <input id="takki" type="submit">
+           <input value="Sign in" id="takki" type="submit">
     </form>
     <div id="lina"></div>
     <form action="signup.php" method="post">
       <h3>Sign Up</h3>
           Code<br>
            <input type="password" name="code" required>
-           <input id="takki1" type="submit">
+           <input value="Sign up" id="takki1" type="submit">
     </form>
 </body>
 </html>

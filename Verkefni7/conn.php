@@ -4,10 +4,10 @@ try{
 	# Hér þarf að breyta dbname, notendanafni og lykilorði
 	$source = 'mysql:host=127.0.0.1;dbname=PHP_Verkefni7';
 	$user = 'root';
-	$password = '';
+	$password = 'galtalind9';
 
 	# tegund og nafn á server, nafn á db og aðgangur
-	$pdo = new PDO($source, $user, $password);
+	$pdo = new PDO($source, $user, $password, $options);
 
 	# stillum hann af hvernig hann með höndlar villur
 	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
